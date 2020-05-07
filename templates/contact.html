@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+
+{% include 'head.html' %}
+<title>Smart Home || Contact</title>
+
+<body>
+    <div class="preloader">
+        <img src="{% static 'images/s_h_logo.jpeg' %}" style="width: 120px" class="preloader__image" alt="">
+    </div><!-- /.preloader -->
+    <div class="page-wrapper">
+
+        {% include 'header.html' %}
+
+
+        <section class="page-header contact">
+            <div class="container">
+                <h2>Kontaktoni Tani</h2>
+                <ul class="list-unstyled thm-breadcrumb">
+                    <li><a href="#">Smart</a></li>
+                    <li><span>Home</span></li>
+                </ul><!-- /.list-unstyled thm-breadcrumb -->
+            </div><!-- /.container -->
+        </section><!-- /.page-header -->
+
+        <section class="contact-two">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-4">
+                        <div class="contact-two__content">
+                            <div class="contact-two__block">
+                                <h3>{{ content1.header_one }}</h3>
+                                <p>{{ content1.line_one }}</p>
+                            </div><!-- /.contact-two__block -->
+                            <ul class="list-unstyled contact-two__info-list">
+                                <li>
+                                    <div class="contact-two__info-list-title">
+                                        <i class="far fa-map-marked"></i>
+                                        Na gjeni në:
+                                    </div><!-- /.contact-two__info-list-title -->
+                                    <p>{{ footer1.adress }}</p>
+                                </li>
+                                <li>
+                                    <div class="contact-two__info-list-title">
+                                        <i class="far fa-phone"></i>
+                                        Telefononi në:
+                                    </div><!-- /.contact-two__info-list-title -->
+                                    <p><a href="tel:08964712365">{{ footer1.tel_one }}</a></p>
+                                    <p><a href="tel:08964712365">{{ footer1.tel_two }}</a></p>
+                                </li>
+                                <li>
+                                    <div class="contact-two__info-list-title">
+                                        <i class="far fa-envelope"></i>
+                                        Dërgoni nje email:
+                                    </div><!-- /.contact-two__info-list-title -->
+                                    <p><a href="mailto:support@gmail.com">{{ footer1.email }}</a></p>
+                                </li>
+                            </ul><!-- /.contact-two__info-list -->
+                        </div><!-- /.contact-two__content -->
+                    </div><!-- /.col-lg-5 -->
+                    <div class="col-lg-8">
+                        <form action="/contact/" method="post" class="contact-two__form">
+                            {% csrf_token %}
+                            <div class="contact-two__block">
+                                <h3>{{ content1.header_two }}</h3>
+                                <p>{{ content1.line_two }}</p>
+                            </div><!-- /.contact-two__block -->
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <input type="text" name="name" placeholder="Emri" required>
+                                </div><!-- /.col-md-6 -->
+                                <div class="col-md-6">
+                                    <input type="email" name="email" placeholder="Email" required>
+                                </div><!-- /.col-md-6 -->
+                                <div class="col-md-12">
+                                    <input type="text" name="subject" placeholder="Subjekti" required>
+                                </div><!-- /.col-md-12 -->
+                                <div class="col-md-12">
+                                    <textarea name="message" placeholder="Mesazhi" required></textarea>
+                                    <button type="submit" class="thm-btn contact-two__btn">Dërgo</button><!-- /.thm-btn contact-two__btn -->
+                                </div><!-- /.col-md-12 -->
+                            </div><!-- /.row -->
+                        </form><!-- /.contact-two__form -->
+                    </div><!-- /.col-lg-7 -->
+                </div><!-- /.row -->
+            </div><!-- /.container -->
+        </section><!-- /.contact-two -->
+
+        <iframe src="{{ content1.iframe }}" class="google-map__contact" allowfullscreen></iframe>
+        
+              {% include 'footer.html' %}
+
+    </div><!-- /.page-wrapper -->
+
+    {% include 'side-menu.html' %}
+
+    <script src="{% static "js/jquery.min.js" %}"></script>
+    <script src="{% static "js/bootstrap.bundle.min.js" %}"></script>
+    <script src="{% static "js/owl.carousel.min.js" %}"></script>
+    <script src="{% static "js/waypoints.min.js" %}"></script>
+    <script src="{% static "js/jquery.counterup.min.js" %}"></script>
+    <script src="{% static "js/TweenMax.min.js" %}"></script>
+    <script src="{% static "js/wow.js" %}"></script>
+    <script src="{% static "js/jquery.magnific-popup.min.js" %}"></script>
+    <script src="{% static "js/jquery.ajaxchimp.min.js" %}"></script>
+    <script src="{% static "js/jquery.validate.min.js" %}"></script>
+    <script src="{% static "js/bootstrap-select.min.js" %}"></script>
+    <script src="{% static "js/jquery.mCustomScrollbar.concat.min.js" %}"></script>
+    <script src="{% static "js/bootstrap-datepicker.min.js" %}"></script>
+    <script src="{% static "js/isotope.js" %}"></script>
+
+    <!-- template scripts -->
+    <script src="{% static "js/theme.js" %}"></script>
+</body>
+
+</html>

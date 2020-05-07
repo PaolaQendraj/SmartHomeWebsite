@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+
+{% include 'head.html' %}
+<title>Smart Home || Services</title>
+
+<body>
+    <div class="preloader">
+        <img src="{% static 'images/s_h_logo.jpeg' %}" style="width: 120px" class="preloader__image" alt="">
+    </div><!-- /.preloader -->
+    <div class="page-wrapper">
+
+        {% include 'header.html' %}
+
+
+        <section class="page-header">
+            <div class="container">
+                <h2>Shërbimet Tona</h2>
+                <ul class="list-unstyled thm-breadcrumb">
+                    <li><a href="#">Smart</a></li>
+                    <li><span>Home</span></li>
+                </ul><!-- /.list-unstyled thm-breadcrumb -->
+            </div><!-- /.container -->
+        </section><!-- /.page-header -->
+
+
+        <section class="service-details">
+            <div class="container">
+                {% for s in service %}
+                <div class="row">
+                    <div class="col-lg-6">
+                        <img src="{{ s.image_big.url }}" alt="">
+                    </div><!-- /.col-lg-6 -->
+                    <div class="col-lg-6">
+                        <div class="service-details__content">
+                            <h3>{{ s.name }}</h3>
+                            <p>{{ s.long_description }}</p>
+                            <ul class="list-unstyled service-details__list">
+                                {% for i in service_info %}
+                                    {% if i.service_name == s.name %}
+                                    <li>
+                                        {{ i.info }}
+                                    </li>
+                                    {% endif %}
+                                {% endfor %}
+                            </ul><!-- /.list-unstyled service-details__list -->
+                        </div><!-- /.service-details__content -->
+                    </div><!-- /.col-lg-6 -->
+                </div><!-- /.row -->
+                {% endfor %}
+            </div><!-- /.container -->
+        </section><!-- /.service-details -->
+
+        <section class="testimonials-two">
+            <div class="container">
+                <div class="block-title-two text-center">
+                    <p>Për Më Tepër</p>
+                    <h3>Disa Shërbime të tjera</h3>
+                </div><!-- /.block-title-two -->
+                <div class="testimonials-two__carousel owl-carousel thm__owl-carousel owl-theme" data-options='{"loop": true, "margin": 30, "stagePadding": 0, "items": 3, "smartSpeed": 700, "autoplay": true, "autoplayTimeout": 7000, "nav": false, "dots": true, "responsive": { "0": { "items": 1, "stagePadding": 0 }, "1199": { "items": 2 }, "1200": { "items": 3 } }}'>
+                    {% for s in other_services %}
+                    <div class="item">
+                        <div class="testimonials-two__single">
+                            <div class="testimonials-two__top">
+                                <div class="cta-six__icon">
+                                    <i class="{{ s.icon}}"></i>
+                                </div><!-- /.cta-six__icon -->
+                                <div class="testimonials-two__top-content">
+                                    <h3>{{ s.name }}</h3>
+                                </div><!-- /.testimonials-two__top-content -->
+                            </div><!-- /.testimonials-two__top -->
+                            <div class="testimonials-two__content">
+                                <p>{{ s.description }}</p>
+                            </div><!-- /.testimonials-two__content -->
+                        </div><!-- /.testimonials-two__single -->
+                    </div><!-- /.item -->
+                    {% endfor %}
+                </div><!-- /.testimonials-two__carousel owl-carousel thm__owl-carousel owl-theme -->
+            </div><!-- /.container -->
+        </section><!-- /.testimonials-two -->
+
+      {% include 'footer.html' %}
+
+    </div><!-- /.page-wrapper -->
+
+    {% include 'side-menu.html' %}
+
+    <script src="{% static "js/jquery.min.js" %}"></script>
+    <script src="{% static "js/bootstrap.bundle.min.js" %}"></script>
+    <script src="{% static "js/owl.carousel.min.js" %}"></script>
+    <script src="{% static "js/waypoints.min.js" %}"></script>
+    <script src="{% static "js/jquery.counterup.min.js" %}"></script>
+    <script src="{% static "js/TweenMax.min.js" %}"></script>
+    <script src="{% static "js/wow.js" %}"></script>
+    <script src="{% static "js/jquery.magnific-popup.min.js" %}"></script>
+    <script src="{% static "js/jquery.ajaxchimp.min.js" %}"></script>
+    <script src="{% static "js/jquery.validate.min.js" %}"></script>
+    <script src="{% static "js/bootstrap-select.min.js" %}"></script>
+    <script src="{% static "js/jquery.mCustomScrollbar.concat.min.js" %}"></script>
+    <script src="{% static "js/bootstrap-datepicker.min.js" %}"></script>
+    <script src="{% static "js/isotope.js" %}"></script>
+
+    <!-- template scripts -->
+    <script src="{% static "js/theme.js" %}"></script>
+</body>
+
+</html>

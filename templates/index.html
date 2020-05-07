@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+
+{% include 'head.html' %}
+<title>Smart Home || Home</title>
+
+<body>
+    <div class="preloader">
+        <img src="{% static 'images/s_h_logo.jpeg' %}" style="width: 120px" class="preloader__image" alt="">
+    </div><!-- /.preloader -->
+    <div class="page-wrapper">
+
+        {% include 'header.html' %}
+
+        <section class="banner-four">
+            <img src="{{ header1.image.url }}" class="banner-four__moc" alt="">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="banner-four__content">
+                            <h4>{{ header1.line_one }}<span>Smart</span></h4>
+                            <h3>{{ header1.line_two }}<br>
+                                <span>{{ header1.line_three }}</span></h3>
+                            <p>{{ header1.line_four }}</p>
+                            <a href="/services/" class="thm-btn banner-four__btn">Më tepër</a><!-- /.thm-btn
+                            banner-four__btn -->
+                        </div><!-- /.banner-four__content -->
+                    </div><!-- /.col-lg-12 -->
+                </div><!-- /.row -->
+            </div><!-- /.container -->
+        </section><!-- /.banner-four -->
+
+        <section class="cta-seven" id="about_us">
+            <img src="{{ about1.image.url }}" class="cta-seven__moc" alt="">
+            <div class="container">
+                <div class="row justify-content-end">
+                    <div class="col-lg-5">
+                        <div class="cta-seven__content">
+                            <div class="cta-six__icon">
+                                <i class="fas fa-user-tie"></i>
+                            </div><!-- /.cta-six__icon -->
+                            <h3>{{ about1.line_one }}</h3>
+                            <p>{{ about1.description }}</p>
+                            <a href="#inovation" class="thm-btn cta-six__btn">Inovacioni Ynë</a>
+                            <!-- /.thm-btn cta-six__btn -->
+                        </div><!-- /.cta-seven__content -->
+                    </div><!-- /.col-lg-5 -->
+                </div><!-- /.row -->
+            </div><!-- /.container -->
+        </section><!-- /.cta-seven -->
+
+        <section class="service-five">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-4 col-md-4">
+                        <div class="service-five__single">
+                            <div class="service-five__single-inner">
+                                <div class="row">
+                                    <div class="col-lg-3">
+                                        <div class="service-five__icon">
+                                            <i class="fas fa-box-check"></i>
+                                        </div><!-- /.service-five__icon -->
+                                    </div>
+                                    <div class="col-lg-9">
+                                        <h3><a href="#">{{ features1.name }}</a></h3>
+                                    </div>
+                                </div>
+                            </div><!-- /.service-five__single-inner -->
+                        </div><!-- /.service-five__single -->
+                    </div><!-- /.col-lg-4 -->
+                    <div class="col-lg-4 col-md-4">
+                        <div class="service-five__single">
+                            <div class="service-five__single-inner">
+                                <div class="row">
+                                    <div class="col-lg-3">
+                                        <div class="service-five__icon">
+                                            <i class="fas fa-cogs"></i>
+                                        </div><!-- /.service-five__icon -->
+                                    </div>
+                                    <div class="col-lg-9">
+                                        <h3><a href="#">{{ features2.name }}</a></h3>
+                                    </div>
+                                </div>
+                            </div><!-- /.service-five__single-inner -->
+                        </div><!-- /.service-five__single -->
+                    </div><!-- /.col-lg-4 -->
+                    <div class="col-lg-4 col-md-4">
+                        <div class="service-five__single">
+                            <div class="service-five__single-inner">
+                                <div class="row">
+                                    <div class="col-lg-3">
+                                        <div class="service-five__icon">
+                                            <i class="fas fa-trophy-alt"></i>
+                                        </div><!-- /.service-five__icon -->
+                                    </div>
+                                    <div class="col-lg-9">
+                                        <h3><a href="#">{{ features3.name }}</a></h3>
+                                    </div>
+                                </div>
+                            </div><!-- /.service-five__single-inner -->
+                        </div><!-- /.service-five__single -->
+                    </div><!-- /.col-lg-4 -->
+                </div><!-- /.row -->
+            </div><!-- /.container -->
+        </section><!-- /.service-five -->
+        
+        <section class="about-three about-three__about-page" id="inovation">
+            <div class="container">
+                <div class="row">
+                    <div class="col-xl-6 col-lg-6">
+                        <div class="about-three__content">
+                            <div class="block-title-two text-left">
+                                <p>{{ inovation1.line_one }}</p>
+                                <h3>{{ inovation1.line_two }}</h3>
+                            </div><!-- /.block-title-two -->
+                            <p>{{ inovation1.description }}</p>
+                            <a href="/contact/" class="thm-btn about-three__btn">Kontaktoni me ne</a>
+                            <!-- /.thm-btn about-three__btn -->
+                        </div><!-- /.about-three__content -->
+                    </div><!-- /.col-lg-6 -->
+                    <div class="col-xl-6 col-lg-6 d-flex justify-content-center">
+                        <div class="video-one__box">
+                            <img src="{{ inovation1.image.url }}" alt="">
+                        </div><!-- /.video-one__box -->
+                    </div><!-- /.col-lg-6 -->
+
+                </div><!-- /.row -->
+            </div><!-- /.container -->
+        </section><!-- /.about-three -->
+        
+        <section class="service-six">
+            <div class="container">
+                <div class="block-title-two text-center block-title-two__home-five">
+                    <p>Cfarë bëjmë ne?</p>
+                    <h3>Shërbimet Tona</h3>
+                </div><!-- /.block-title-two -->
+                <div class="service-six__carousel thm__owl-carousel owl-carousel owl-theme" data-options='{
+            "loop": true, "items": 3, "nav": false, "margin": 30, "autoplay": true, "autoplayTimeout": 5000, "autoplayHoverPause": true, "dots": true, "smartSpeed": 700, "responsive": {
+                "0": { "items": 1 },
+                "991": { "items": 2 }, 
+                "1199": { "items": 2 },
+                "1200": { "items": 3 }
+            }
+        }'>         {% for s in service %}
+                    <div class="item">
+                        <div class="service-six__single">
+                            <div class="service-six__image">
+                                <img src="{{ s.image_small.url }}" alt="">
+                            </div><!-- /.service-six__image -->
+                            <div class="service-six__content">
+                                <h3><i class="far fa-bullseye-pointer"></i> <a href="#">{{ s.name }}</a></h3>
+                                <p>{{ s.short_description }}</p>
+                                 <a href="/services/" class="thm-btn about-three__btn">Lexoni më shumë<i class="fa
+                                 fa-angle-double-right"></i></a>
+                            </div><!-- /.service-six__content -->
+                        </div><!-- /.service-six__single -->
+                    </div><!-- /.item -->
+                    {% endfor %}
+                </div><!-- /.service-six__carousel thm__owl-carousel owl-carousel owl-theme -->
+            </div><!-- /.container -->
+        </section><!-- /.service-six -->
+
+        {% include 'footer.html' %}
+        
+    </div><!-- /.page-wrapper -->
+
+    {% include 'side-menu.html' %}
+
+    <script src="{% static "js/jquery.min.js" %}"></script>
+    <script src="{% static "js/bootstrap.bundle.min.js" %}"></script>
+    <script src="{% static "js/owl.carousel.min.js" %}"></script>
+    <script src="{% static "js/waypoints.min.js" %}"></script>
+    <script src="{% static "js/jquery.counterup.min.js" %}"></script>
+    <script src="{% static "js/TweenMax.min.js" %}"></script>
+    <script src="{% static "js/wow.js" %}"></script>
+    <script src="{% static "js/jquery.magnific-popup.min.js" %}"></script>
+    <script src="{% static "js/jquery.ajaxchimp.min.js" %}"></script>
+    <script src="{% static "js/jquery.validate.min.js" %}"></script>
+    <script src="{% static "js/bootstrap-select.min.js" %}"></script>
+    <script src="{% static "js/jquery.mCustomScrollbar.concat.min.js" %}"></script>
+    <script src="{% static "js/bootstrap-datepicker.min.js" %}"></script>
+    <script src="{% static "js/isotope.js" %}"></script>
+
+    <!-- template scripts -->
+    <script src="{% static "js/theme.js" %}"></script>
+</body>
+
+</html>

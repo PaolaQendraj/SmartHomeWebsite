@@ -1,0 +1,60 @@
+{% load static %}
+<footer class="site-footer-one">
+    <div class="site-footer-one__upper">
+        <div class="container">
+            <img src="{{ footer1.image.url }}" alt="" class="site-footer-one__upper-moc">
+            <div class="row">
+                <div class="col-lg-3">
+                    <div class="footer-widget footer-widget__about">
+                        <a href="/">
+                            <img src="{{ footer1.logo.url }}" alt="">
+                        </a>
+                        <p>{{ footer1.description }}</p>
+                        <form action="/subscribe/" method="post" class="footer__mc-form">
+                            {% csrf_token %}
+                            <input type="email" name="email" placeholder="Vendosni Email-in tuaj" required>
+                            <button type="submit"><i class="fa fa-long-arrow-alt-right"></i></button>
+                        </form><!-- /.footer__mc-form -->
+                        <div class="footer-widget__social">
+                            <a href="{{ footer1.link_facebook }}"><i class="fab fa-facebook-f"></i></a>
+                            <a href="{{ footer1.link_instagram }}"><i class="fab fa-instagram"></i></a>
+                        </div><!-- /.footer-widget__social -->
+                    </div><!-- /.footer-widget -->
+                </div><!-- /.col-lg-3 -->
+                <div class="col-lg-4">
+                    <div class="footer-widget footer-widget__contact">
+                        <h3 class="footer-widget__title">Kontakte</h3><!-- /.footer-widget__title -->
+                        <div class="footer-widget__contact-box">
+                            <div class="footer-widget__contact-top">
+                                <i class="far fa-map-marked"></i>
+                                <h3>Adresa</h3>
+                            </div><!-- /.footer-widget__contact-top -->
+                            <p>{{ footer1.adress }}</p>
+                        </div><!-- /.footer-widget__contact-box -->
+                        <div class="footer-widget__contact-box">
+                            <div class="footer-widget__contact-top">
+                                <i class="far fa-phone"></i>
+                                <h3>Nr. Telefoni</h3>
+                            </div><!-- /.footer-widget__contact-top -->
+                            <p><a href="">{{ footer1.tel_one }}</a></p>
+                            <p><a href="">{{ footer1.tel_two }}</a></p>
+                        </div><!-- /.footer-widget__contact-box -->
+                        <div class="footer-widget__contact-box">
+                            <div class="footer-widget__contact-top">
+                                <i class="far fa-envelope"></i>
+                                <h3>Email</h3>
+                            </div><!-- /.footer-widget__contact-top -->
+                            <p><a href="">{{ footer1.email }}</a></p>
+                        </div><!-- /.footer-widget__contact-box -->
+                    </div><!-- /.footer-widget footer-widget__contact -->
+                </div><!-- /.col-lg-4 -->
+            </div><!-- /.row -->
+        </div><!-- /.container -->
+    </div><!-- /.site-footer-one__upper -->
+    <div class="site-footer-one__bottom">
+        <div class="container">
+            <div class="site-footer-one__bottom-line"></div><!-- /.site-footer-one__bottom-line -->
+            <p>© Copyright 2020 by <a href="https://gosocial.al/">{{ footer1.copyright_text }}</a></p>
+        </div><!-- /.container -->
+    </div><!-- /.site-footer-one__bottom -->
+</footer><!-- /.site-footer-one -->
