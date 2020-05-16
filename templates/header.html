@@ -4,22 +4,24 @@
         <div class="container-fluid">
             <div class="main-nav__logo-box">
                 <a href="/">
-                    <img src="{% static 'images/s_h_logo.jpeg' %}" alt="" style="width: 50px">
+                    <img src="{% static 'images/s_h_logo.png' %}" alt="" style="width: 75px; margin-left: 10px">
                 </a>
             </div><!-- /.main-nav__logo-box -->
             <div class="main-nav__main-navigation">
                 <ul class=" main-nav__navigation-box">
                     <li>
-                        <a href="/">Home</a>
+                        <a href="/" class="{% if request.get_full_path == '/'  %}active{% endif %}">Home</a>
                     </li>
                     <li>
-                        <a href="/#about_us">Rreth Nesh</a>
+                        <a href="/#about_us" class="{% if request.get_full_path == '/#about_us/'  %}
+                        active{% endif %}">Rreth Nesh</a>
                     </li>
                     <li>
-                        <a href="/services/">Shërbime</a>
+                        <a href="/services/" class="{% if request.get_full_path == '/services/'%}
+                        active{% endif %}">Shërbime</a>
                     </li>
                     <li>
-                        <a href="/contact/">Kontakt</a>
+                        <a href="/contact/" class="{% if request.get_full_path == '/contact/'%}active{% endif %}">Kontakt</a>
                     </li>
                 </ul>
             </div><!-- /.main-nav__main-navigation -->

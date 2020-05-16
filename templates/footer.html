@@ -12,6 +12,7 @@
                         <p>{{ footer1.description }}</p>
                         <form action="/subscribe/" method="post" class="footer__mc-form">
                             {% csrf_token %}
+                            <h5 style="color: red">{{ email_error }}</h5>
                             <input type="email" name="email" placeholder="Vendosni Email-in tuaj" required>
                             <button type="submit"><i class="fa fa-long-arrow-alt-right"></i></button>
                         </form><!-- /.footer__mc-form -->
@@ -36,15 +37,15 @@
                                 <i class="far fa-phone"></i>
                                 <h3>Nr. Telefoni</h3>
                             </div><!-- /.footer-widget__contact-top -->
-                            <p><a href="">{{ footer1.tel_one }}</a></p>
-                            <p><a href="">{{ footer1.tel_two }}</a></p>
+                            <p><a href="tel:{{ footer1.tel_one }}">{{ footer1.tel_one }}</a></p>
+                            <p><a href="tel:{{ footer1.tel_two }}">{{ footer1.tel_two }}</a></p>
                         </div><!-- /.footer-widget__contact-box -->
                         <div class="footer-widget__contact-box">
                             <div class="footer-widget__contact-top">
                                 <i class="far fa-envelope"></i>
                                 <h3>Email</h3>
                             </div><!-- /.footer-widget__contact-top -->
-                            <p><a href="">{{ footer1.email }}</a></p>
+                            <p><a href = "mailto:{{ footer1.email }}?subject = Feedback&body = Message">{{ footer1.email }}</a></p>
                         </div><!-- /.footer-widget__contact-box -->
                     </div><!-- /.footer-widget footer-widget__contact -->
                 </div><!-- /.col-lg-4 -->

@@ -18,8 +18,8 @@
             <div class="container">
                 <h2>Kontaktoni Tani</h2>
                 <ul class="list-unstyled thm-breadcrumb">
-                    <li><a href="#">Smart</a></li>
-                    <li><span>Home</span></li>
+                    <li><a href="#">Smart Home</a></li>
+                    <li><span>Kontakte</span></li>
                 </ul><!-- /.list-unstyled thm-breadcrumb -->
             </div><!-- /.container -->
         </section><!-- /.page-header -->
@@ -46,15 +46,16 @@
                                         <i class="far fa-phone"></i>
                                         Telefononi në:
                                     </div><!-- /.contact-two__info-list-title -->
-                                    <p><a href="tel:08964712365">{{ footer1.tel_one }}</a></p>
-                                    <p><a href="tel:08964712365">{{ footer1.tel_two }}</a></p>
+                                    <p><a href="tel:{{ footer1.tel_one }}">{{ footer1.tel_one }}</a></p>
+                                    <p><a href="tel:{{ footer1.tel_two }}">{{ footer1.tel_two }}</a></p>
                                 </li>
                                 <li>
                                     <div class="contact-two__info-list-title">
                                         <i class="far fa-envelope"></i>
                                         Dërgoni nje email:
                                     </div><!-- /.contact-two__info-list-title -->
-                                    <p><a href="mailto:support@gmail.com">{{ footer1.email }}</a></p>
+                                    <p><a href = "mailto:{{ footer1.email }}?subject = Feedback&body = Message"
+                                    >{{ footer1.email }}</a></p>
                                 </li>
                             </ul><!-- /.contact-two__info-list -->
                         </div><!-- /.contact-two__content -->
@@ -62,6 +63,7 @@
                     <div class="col-lg-8">
                         <form action="/contact/" method="post" class="contact-two__form">
                             {% csrf_token %}
+                            <h4 style="color: red">{{ email_error }}</h4>
                             <div class="contact-two__block">
                                 <h3>{{ content1.header_two }}</h3>
                                 <p>{{ content1.line_two }}</p>

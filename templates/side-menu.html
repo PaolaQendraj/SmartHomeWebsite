@@ -21,7 +21,8 @@
             <div class="side-menu__sep"></div><!-- /.side-menu__sep -->
             <div class="side-menu__content">
                 <p>{{ side_menu1.text }}</p>
-                <p><a>{{ footer1.email }}</a> <br> <a>{{ footer1.tel_one }}</a><br> <a>{{ footer1.tel_two }}</a></p>
+                <p><a href = "mailto:{{ footer1.email }}?subject = Feedback&body = Message">{{ footer1.email }}</a> <br> <a href="tel:{{ footer1.tel_one }}">{{ footer1.tel_one }}</a><br>
+                    <a href="tel:{{ footer1.tel_two }}">{{ footer1.tel_two }}</a></p>
             </div><!-- /.side-menu__content -->
         </div><!-- /.side-menu__block-inner -->
     </div><!-- /.side-menu__block -->
